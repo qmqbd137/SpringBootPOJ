@@ -1,6 +1,26 @@
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: assign_uuid
+      table-underline: false
+#      表前缀名设置
+#      table-prefix:
+  configuration:
+#    表字段名映射改为驼峰（默认为下划线分隔）
+    map-underscore-to-camel-case: false
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.qmq.springbootpoj
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/qmq?useUnicode=true&characterEncoding=utf-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    url: jdbc:mysql://120.77.96.42:3306/ManageDB_Dev?useUnicode=true&characterEncoding=utf-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
     username: root
     password: mc124289
+  redis:
+    host: 120.77.96.42
+    port: 6379
+    password: mc124289
+    jedis:
+      pool:
+        max-active: 8
