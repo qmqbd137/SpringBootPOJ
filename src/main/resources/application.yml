@@ -16,11 +16,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://120.77.96.42:3306/ManageDB_Dev?useUnicode=true&characterEncoding=utf-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
     username: root
-    password: mc124289
+    password: 
   redis:
-    host: 120.77.96.42
+    host: 
     port: 6379
-    password: mc124289
+    password: 
     jedis:
       pool:
         max-active: 8
