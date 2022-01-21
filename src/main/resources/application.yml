@@ -1,3 +1,26 @@
+#          应用基础配置
+server:
+  port: 9080
+  servlet:
+    context-path: /SpringBootApp
+#apollo配置
+app:
+  id: qmqSpringbootApp
+apollo:
+  meta: http://120.77.96.42:8080
+  bootstrap:
+    enabled: true
+    eagerLoad:
+      enabled: true
+eureka:
+  instance:
+    preferIpAddress: false
+  client:
+    serviceUrl:
+      defaultZone: http://120.77.96.42:8080/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+#    mybatis-plus配置
 mybatis-plus:
   global-config:
     db-config:
@@ -10,17 +33,16 @@ mybatis-plus:
     map-underscore-to-camel-case: false
   mapper-locations: classpath*:/mapper/**/*.xml
   type-aliases-package: com.qmq.springbootpoj
-
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://120.77.96.42:3306/ManageDB_Dev?useUnicode=true&characterEncoding=utf-8&relaxAutoCommit=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
-    username: root
-    password: 
+#redis配置
   redis:
-    host: 
-    port: 6379
-    password: 
     jedis:
       pool:
         max-active: 8
+#        日志配置
+logging:
+  level:
+    com:
+      qmq:
+        springbootpoj:
+          controller: debug
+
